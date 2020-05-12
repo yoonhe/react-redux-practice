@@ -42,6 +42,7 @@ const reducer = (state = initialState, action) => {
       };
     }
     default: {
+      // 정의해준 액션 이외에 다른 액션이 들어오면?
       return {
         ...state,
       };

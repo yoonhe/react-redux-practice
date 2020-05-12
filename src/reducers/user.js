@@ -8,10 +8,10 @@ export const initialState = {
 
 // Action 이름
 // 매번 Action명을 문자열로 쓰는 것은 번거롭기대문에 상수사용
-const LOG_IN = 'LOG_IN';
-const LOG_OUT = 'LOG_OUT';
-const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOG_IN = 'LOG_IN';
+export const LOG_OUT = 'LOG_OUT';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
 
 // Action
 // 하나하나 action 오브젝트를 만드는 걸 수작업으로 하는 것을 피하기위해 함수사용

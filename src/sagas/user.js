@@ -1,8 +1,9 @@
-import { call, all, fork } from 'redux-saga/effects';
+import { call, all, fork, takeEvery, put } from 'redux-saga/effects';
+import { LOG_IN, LOG_OUT, LOGIN_SUCCESS, LOGIN_FAIL } from '../reducers/user';
 
-function* loginAPI() {
+function loginAPI() {
   // 서버에 login 요청을 하는 부분
-  return console.log('로그인 서버 접속 성공');
+  return true;
 }
 
 function* login() {
@@ -24,7 +25,7 @@ function* login() {
 }
 function* watchLogin() {
   // takeLatest => LOG_IN 액션이 dispatch 되길 기다렸다가 dispatch 될 때 login 제네레이터를 호출한다
-  yield takeLatest(LOG_IN, login);
+  yield takeEvery(LOG_IN, login);
 }
 
 export default function* userSaga() {

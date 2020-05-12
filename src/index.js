@@ -1,3 +1,4 @@
+// import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './pages/App';
@@ -8,14 +9,13 @@ import { Provider } from 'react-redux'; // 리액트 컴포넌트들의 리덕�
 import reducer from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-sagaMiddleware.run(rootSaga);
 
 const enhancer =
   process.env.NODE_ENV === 'production'
     ? compose(applyMiddleware(sagaMiddleware)) // production 모드 일때는 리덕스데브 노출안함
     : compose(
         // production 모드가 아닐때 리덕스데브툴 노출
-        /*applyMiddleware(sagaMiddleware),*/
+        applyMiddleware(sagaMiddleware),
         true && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
           ? window.__REDUX_DEVTOOLS_EXTENSION__()
           : (f) => f
@@ -35,3 +35,5 @@ ReactDOM.render(
   </Provider>,
   document.querySelector('#root')
 );
+
+sagaMiddleware.run(rootSaga);

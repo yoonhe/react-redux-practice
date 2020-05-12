@@ -5,6 +5,7 @@ module.exports = {
   mode: 'development',
 
   entry: './src/index',
+  
 
   resolve: {
     extensions: ['.js', '.jsx'],
