@@ -5,7 +5,6 @@ module.exports = {
   mode: 'development',
 
   entry: './src/index',
-  
 
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -14,7 +13,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'), // 이 경로에 있는 파일이 변경될 때 번들을 다시 컴파일
     compress: true,
-    port: 8080, // 각자의 portNumber 작성
+    port: 8888, // 각자의 portNumber 작성
   },
 
   module: {
